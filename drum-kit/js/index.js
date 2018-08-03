@@ -44,5 +44,18 @@ const handleKeyDown = (event) => {
 const handleKeyUp = (event) => {
   playKey(event.key);
 };
+
+const handleMouseDown = (event) => {
+  const key = (event.target.dataset.key || event.srcElement.dataset.key);
+  playKey(key, 'active');
+}
+
+const handleMouseUp = (event) => {
+  const key = (event.target.dataset.key || event.srcElement.dataset.key);
+  playKey(key);
+}
+
 document.addEventListener('keydown', handleKeyDown);
 document.addEventListener('keyup', handleKeyUp);
+document.body.onmousedown = handleMouseDown;
+document.body.onmouseup = handleMouseUp;

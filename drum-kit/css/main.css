@@ -11,18 +11,21 @@
   top: 50%;
   text-align: center;
   vertical-align: middle;
+  transition: transform 100ms ease-in-out;
 }
 
 .key.active {
   background-color: hsl(240, 55%, 80%);
+
+  transform: rotate(5deg) scale(1.2);
 }
 
 .kbd {
   position: relative;
   top: 50%;
-  transform: translateY(-50%);
   vertical-align: middle;
   text-align: center;
+
 }
 
 .content {
