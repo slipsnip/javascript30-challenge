@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono');
+
 .key {
   display: inline-block;
-  background-color: rgb(146, 146, 219);
+  background-color: rgba(146, 146, 219, 0.7);
   border: 2px solid blue;
   border-radius: 5px; 
   padding: 10px;
@@ -15,8 +17,8 @@
 }
 
 .key.active {
-  background-color: hsl(240, 55%, 80%);
-
+  border-color: rgb(175, 175, 232);
+  color:yellow;
   transform: rotate(5deg) scale(1.2);
 }
 
@@ -38,4 +40,5 @@
 body {
   padding: 0px;
   margin: 0px;
+  font-family: 'Fira Mono', monospace;
 }
