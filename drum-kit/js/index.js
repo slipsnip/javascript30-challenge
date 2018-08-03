@@ -3,7 +3,9 @@ class audioKeys {
     this.audioMap = new Map();
   }
   play(k) {
-    this.audioMap.get(k).play();
+    const key = this.audioMap.get(k);
+    key.currentTime = 0;
+    key.play();
   }
   add(key, audioFile) {
     this.audioMap.set(key, new Audio(audioFile));
