@@ -1,0 +1,62 @@
+:root {
+  --fill: blue;
+  --stroke: green;
+  --stroke-width: 4;
+  --background-color: rgb(170, 170, 240);
+  --radius: 30; /*Cannot be set via css*/
+}
+
+#circle {
+  fill: var(--fill);
+  stroke: var(--stroke);
+  stroke-width: var(--stroke-width);
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+  width: 50%;
+  margin: auto;
+  padding: 15px;
+  border: 2px solid var(--stroke);
+  border-radius: 15px;
+}
+
+label {
+  text-align: center;
+}
+
+.title {
+  font-size: 2em;
+}
+.double-col {
+  grid-column: span 2;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container > h1 {
+  text-align: center;
+}
+
+.color {
+  display: block;
+  margin: auto;
+}
+
+svg {
+  display: block;
+  margin: auto;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: var(--background-color);
+}
