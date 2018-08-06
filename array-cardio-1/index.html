@@ -49,7 +49,8 @@
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
-    console.info('Inventors Oldest to Youngest');
+
+    console.info('Inventors Oldest to Youngest');  
     const oldest = inventors.sort( (a, b) => {
       if (a.year === b.year) return 0;
       return (a.year < b.year) ? -1 : 1;
@@ -59,20 +60,69 @@
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
+    console.info('Years lived total of all inventors');
+    const yearsAlive = inventors.map( inventor => (inventor.passed - inventor.year))
+      .reduce((acc, alive) => acc + alive);
+    console.info(`Total years lived: ${yearsAlive}`);
+    line('=', LEN_LINE);
 
     // 5. Sort the inventors by years lived
 
+    console.info('Inventors sorted by years alive');
+    // { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
+    const lifespanSort = inventors.sort( (i1, i2) => {
+      const yearsAlive = inventor => inventor.passed - inventor.year;
+      if (yearsAlive(i1) === yearsAlive(i2)) return 0;
+      return (yearsAlive(i1) > yearsAlive(i2)) ? -1 : 1;
+    });
+    console.table(lifespanSort);
+    line('=', LEN_LINE);
+    
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-
+    
+    // wikipedia does not enable CORS so id have to find a way to spoof origin
+    // If I wanted to parse the resource request into array of boulevards
+    // Thus I am hard coding them
+    console.info("Paris Boulevards containing 'de'");
+    const boulevards = ['Boulevard Auguste-Blanqui', 'Boulevard Aguste-Blanqui', 'Boulevard Barbués',
+      'Boulevard Beaumarchais', "Boulevard de L'Amiral-Bruix", 'Boulevard des Capucines',
+      'Boulevard de la Chapelle', 'Boulevard de Clichy', 'Boulevard du Crime',
+      'Boulevard Haussmann', "Boulevard de l'Hôpital", 'Boulevard des Italiens',
+      'Boulevard de la Madeleine', 'Boulevard de Magenta', 'Boulevard Montmartre',
+      'Boulevard du Montparnasse', 'Boulevard Raspail', 'Boulevard Richard-Lenoir',
+      'Boulevard de Rochechouart', 'Boulevard Saint-Germain', 'Boulevard Saint-Michel',
+      'Boulevard de Sébastopol', 'Boulevard de Strasbourg', 'Boulevard du Temple',
+      'Boulevard Voltaire', 'Boulevard de la Zone'
+    ]
+    const containsDe = boulevards.filter(blvd => /\s(de)\s/i.test(blvd));
+    console.table(containsDe);
+    line('=', LEN_LINE);
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    console.info('People sorted alphabetically by last name');
+    const sorted = people.sort( (person1, person2) => {
+      const lastName = (fullname) => fullname.split(',')[1].trim();
+      if (lastName(person1).substring(0,1) === lastName(person2).substring(0,1)) return 0;
+      return (lastName(person1).substring(0,1) < lastName(person2).substring(0,1)) ? -1 : 1;
+    });
+    console.table(sorted);
+    line('=', LEN_LINE);
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-
+    
+    console.info('Sum up methods of travel');
+    const travelTotals = data.reduce( (acc, method) => {
+      if (!acc[method]) acc[method] = 0;
+      acc[method] += 1;
+      return acc;
+    }, {});
+    console.table(travelTotals);
+    line('=', LEN_LINE);
+    
   </script>
 </body>
 </html>
