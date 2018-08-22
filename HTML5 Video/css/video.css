@@ -1,0 +1,39 @@
+body {
+  font-size: 50px;
+}
+.player {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.controls {
+  position: absolute;
+  height: 14px;
+  width: 100%;
+  background: black;
+  bottom: 0px;
+  font-size: 2em;
+  transition: opacity 250ms, visibility 250ms;
+  border: 1px solid blue;
+}
+
+.play-indicator {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: blue;
+  text-align: center;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
