@@ -1,31 +1,63 @@
-body {
-  font-size: 50px;
-}
 .player {
   display: inline-block;
-  position: relative;
+  position: absolute;
+  width: 640px;
   margin: 0;
   padding: 0;
+  /* border: 2px dashed blue; */
+}
+
+video {
+  /* border: 2px dashed yellow; */
 }
 
 .controls {
-  position: absolute;
-  height: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  bottom: 35px;
+  height: 26px;
   width: 100%;
-  background: black;
-  bottom: 0px;
-  font-size: 2em;
+  background: rgba(0, 173, 242, 0.4);
+  color: black;
+  font-size: 16px;
   transition: opacity 250ms, visibility 250ms;
-  border: 1px solid blue;
+
 }
 
 .play-indicator {
   position: absolute;
-  left: 50%;
   top: 50%;
+  left: 50%;
+  width: 100px;
+  height: auto;
+  font-size: 5em;
+  transform: translate(-50px,-50px);
   color: blue;
   text-align: center;
-  transform: translateX(-50%) translateY(-50%);
+  line-height: 100px;
+}
+
+progress {
+  -webkit-appearance: none;
+  position: absolute;
+  bottom: 20px;
+  height: 5px;
+  border: none;
+  transform: translateY(-10px);
+}
+
+/* All good till now. Now we'll style the background */
+progress::-webkit-progress-bar {
+	background: rgba(215, 216, 216, 0.4);
+	padding: 0;
+}
+
+/* Now the value part */
+progress::-webkit-progress-value {
+  background: red;
 }
 
 .visible {

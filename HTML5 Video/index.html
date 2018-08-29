@@ -7,15 +7,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>HTML5 Video - Styled</title>
   <link rel="stylesheet" href="css/video.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
   <script src="js/video.js" defer></script>
 </head>
 
 <body>
   <div class="player">
-    <video src="media/Adventure Trip.mp4"></video>
+    <video src="media/Adventure Trip.mp4" width="640" height="360"></video>
     <div class="play-indicator"></div>
-    <div class="controls">      
+    <progress max="100"></progress>
+    <div class="controls">
+        <i class="fas fa-fast-backward" data-ctrl="fast-back"></i>
+        <i class="fas fa-step-backward" data-ctrl="step-back"></i>
+        <i class="fas fa-step-forward" data-ctrl="step-forward"></i>
+        <i class="fas fa-fast-forward" data-ctrl="fast-forward"></i>
     </div>
   </div>
 </body>
