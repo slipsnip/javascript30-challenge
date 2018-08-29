@@ -15,9 +15,10 @@ const show = (...elements) => {
   });
 };
 
-const play = () => {
+function play(event) {
   const pauseIcon = '<i class="pause far fa-pause-circle"></i>';
   const playIcon = '<i class="play far fa-play-circle"></i>';
+  console.dir(event.target);
 
   if (!video.paused) {
     video.pause();
@@ -37,6 +38,7 @@ const updateProgress = () => {
 };
 
 function handleControl(event) {
+  event.cancelBubble = (event.target.nodeName === 'I') ? true : false;
   let newTime = video.currentTime;
   switch (event.target.dataset.ctrl) {
     case 'fast-back':
