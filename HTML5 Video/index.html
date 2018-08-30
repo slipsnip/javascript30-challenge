@@ -18,10 +18,19 @@
     <div class="play-indicator"></div>
     <progress max="100"></progress>
     <div class="controls">
+      <div class="play">
+        <i class="play fa fa-play" data-ctrl="play"></i>
+      </div>
+      <div class="skip">
         <i class="fas fa-fast-backward" data-ctrl="fast-back"></i>
         <i class="fas fa-step-backward" data-ctrl="step-back"></i>
         <i class="fas fa-step-forward" data-ctrl="step-forward"></i>
         <i class="fas fa-fast-forward" data-ctrl="fast-forward"></i>
+      </div>
+      <div class="volume">
+        <input type="range" name="volume" min="0" max="1" step="0.05" value="1" data-ctrl="volume">
+        <i class="fas fa-window-maximize" data-ctrl="fullscreen"></i>
+      </div>
     </div>
   </div>
 </body>

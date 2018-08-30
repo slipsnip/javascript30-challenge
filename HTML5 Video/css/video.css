@@ -49,6 +49,11 @@ progress {
   transform: translateY(-10px);
 }
 
+.show {
+  height: 20px;
+  bottom: 51px;
+}
+
 /* All good till now. Now we'll style the background */
 progress::-webkit-progress-bar {
 	background: rgba(215, 216, 216, 0.4);
