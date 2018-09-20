@@ -19,5 +19,5 @@ h1 {
   text-shadow: 10px 10px 0 rgba(0,0,0,1);
   font-size: 100px;
   color: blue;
-  transition: text-shadow 1s ease;
+  /* transition: text-shadow 1s ease; */
 }
