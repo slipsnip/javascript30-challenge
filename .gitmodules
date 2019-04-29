@@ -1,0 +1,3 @@
+[submodule "JavaScript30"]
+	path = JavaScript30
+	url = git@github.com:wesbos/JavaScript30.git
